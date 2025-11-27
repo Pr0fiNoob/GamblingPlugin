@@ -1,0 +1,6 @@
+name: GamblingPlugin
+version: '1.0-SNAPSHOT'
+main: net.profinoob.gamblingPlugin.GamblingPlugin
+api-version: '1.20'
+authors: [ Profi Noob ]
+description: A Plugin that adds gambling to Minecraft
