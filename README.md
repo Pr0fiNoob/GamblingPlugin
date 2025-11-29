@@ -45,12 +45,13 @@ Spend your earned money to try your luck:
 ## 📜 Commands (Planned)
 
 * `/exchange` – Convert resources to money.
-* `/balance` – Check your gambling balance. (In development)
+* `/balance` – Check your gambling balance.
 * `/gamble` – Open the main gambling menu. (In development)
 
 ## ⚙️ Permissions (Planned)
 
 * `gambling.exchange` – Allows users to convert resources to money.
+* `gambling.balance` – Allows users to check their own or other player's balance
 * `gambling.play` – Parent Permission for all gambling games. (In development)
 * `gambling.play.<game>` – Is used to revoke access to a specific game. (In development)
 
