@@ -9,7 +9,14 @@ commands:
   exchange:
     description: exchange the item in your hand for money
 
+  balance:
+    description: check your own or other player's balance
+
 permissions:
   gambling.exchange:
     description: Allows the player to use the exchange command
+    default: true
+
+  gambling.balance:
+    description: Allows the player to check their own and other player's balance
     default: true

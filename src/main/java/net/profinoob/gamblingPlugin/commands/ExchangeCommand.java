@@ -30,7 +30,7 @@ public class ExchangeCommand implements CommandExecutor {
 
         // Confirm Exchanges Exist
         if (exchangeConfig == null || exchangeConfig.getKeys(false).isEmpty()) {
-            GamblingPlugin.getPlugin().getLogger().warning("No exchanges found in config.yml!");
+            GamblingPlugin.getPlugin().getComponentLogger().warn("No exchanges found in config.yml!");
             return;
         }
 
@@ -38,7 +38,7 @@ public class ExchangeCommand implements CommandExecutor {
         for (String key : exchangeConfig.getKeys(false)) {
             Material mat = Material.getMaterial(key.toUpperCase());
             if (mat == null) {
-                GamblingPlugin.getPlugin().getLogger().warning("Skipping unknown Material: " + key);
+                GamblingPlugin.getPlugin().getComponentLogger().warn("Skipping unknown Material: {}", key);
                 continue;
             }
 
@@ -94,6 +94,7 @@ public class ExchangeCommand implements CommandExecutor {
                 // remove item from player's inventory and add payout to balance
                 player.getInventory().setItemInMainHand(new ItemStack(Material.AIR));
                 GamblingPlugin.getPlugin().getMoneyManager().addMoney(player, payout);
+                GamblingPlugin.getPlugin().getComponentLogger().info("{} exchanged {} {} for {} coins", player.getName(), amount, getFormattedName(heldItem.getType()), payout);
                 return true;
             }
         }

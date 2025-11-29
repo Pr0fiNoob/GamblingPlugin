@@ -66,6 +66,7 @@ public class MoneyManager {
         }
         try {
             config.save(file);
+            GamblingPlugin.getPlugin().getComponentLogger().info("Saved balances to money.yml");
         } catch (IOException e) {
             e.printStackTrace();
         }

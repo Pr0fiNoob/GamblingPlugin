@@ -1,4 +1,4 @@
 exchanges: # You can specify exchange values here like this: Bukkit Material Enum: value (int, greater or equal to 0, negative values or values with decimals are not allowed and will cause an error)
-  #GOLD_INGOT: 15  This is an example of how you configure the plugin.
-  #IRON_INGOT: 5  This is another example.
-  #DIAMOND: 30  This is another example.
+  # GOLD_INGOT: 15  This is an example of how you configure the plugin.
+  # IRON_INGOT: 5  This is another example.
+  # DIAMOND: 30  This is another example.

@@ -1,5 +1,6 @@
 package net.profinoob.gamblingPlugin;
 
+import net.profinoob.gamblingPlugin.commands.BalanceCommand;
 import net.profinoob.gamblingPlugin.commands.ExchangeCommand;
 import net.profinoob.gamblingPlugin.utils.MoneyManager;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -24,6 +25,7 @@ public final class GamblingPlugin extends JavaPlugin {
 
         // Register commands
         getCommand("exchange").setExecutor(new ExchangeCommand());
+        getCommand("balance").setExecutor(new BalanceCommand());
     }
 
     @Override
