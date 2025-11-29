@@ -2,5 +2,14 @@ name: GamblingPlugin
 version: '1.0-SNAPSHOT'
 main: net.profinoob.gamblingPlugin.GamblingPlugin
 api-version: '1.20'
-authors: [ Profi Noob ]
+authors: [ Pr0fiNoob ]
 description: A Plugin that adds gambling to Minecraft
+
+commands:
+  exchange:
+    description: exchange the item in your hand for money
+
+permissions:
+  gambling.exchange:
+    description: Allows the player to use the exchange command
+    default: true

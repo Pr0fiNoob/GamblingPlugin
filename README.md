@@ -21,10 +21,11 @@ Each resource has a configurable exchange value.
 
 Spend your earned money to try your luck:
 
-* **Roulette** – Bet on colors or numbers.
-* **Ride the Bus** – High-risk, high-reward mini‑game.
-* **Slot Machines** – Spin for randomized payouts.
-* More games planned!
+* **Roulette** – Bet on colors or numbers. (In development)
+* **Ride the Bus** – High-risk, high-reward mini‑game. (In development)
+* **Slot Machines** – Spin for randomized payouts. (In development)
+* **Coin Flip** – Flip a coin to win or lose money. (In development)
+* More games are planned!
 
 ### 📈 Future Plans
 
@@ -39,21 +40,28 @@ Spend your earned money to try your luck:
 1. Download the latest plugin release.
 2. Place the `.jar` file into your server's `plugins` folder.
 3. Restart the server.
-4. Configure values in the generated config file.
+4. Configure in the generated config file.
 
 ## 📜 Commands (Planned)
 
 * `/exchange` – Convert resources to money.
-* `/balance` – Check your gambling balance.
-* `/gamble` – Open the main gambling menu.
+* `/balance` – Check your gambling balance. (In development)
+* `/gamble` – Open the main gambling menu. (In development)
+
+## ⚙️ Permissions (Planned)
+
+* `gambling.exchange` – Allows users to convert resources to money.
+* `gambling.play` – Parent Permission for all gambling games. (In development)
+* `gambling.play.<game>` – Is used to revoke access to a specific game. (In development)
+
 
 ## 🧩 Configuration
 
 A full YAML config allows changing:
 
-* Resource value multipliers
-* Minimum and maximum bets
-* More Config comming soon!
+* Resource exchange values
+* Minimum and maximum bets (in development)
+* More Config coming soon!
 
 ## 💡 Goals
 
