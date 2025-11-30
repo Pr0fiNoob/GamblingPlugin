@@ -27,6 +27,8 @@ Spend your earned money to try your luck:
 * **Coin Flip** – Flip a coin to win or lose money. (In development)
 * More games are planned!
 
+(All games will remain command-only (this doesn't include the game selection menu) until v1.0.0 is released)
+
 ### 📈 Future Plans
 
 * **Stocks & Crypto simulation**
@@ -35,6 +37,41 @@ Spend your earned money to try your luck:
     * Buy, hold, sell system
     * Risk levels and random events
 
+---
+
+## 🚀 Current Release
+**Latest version:** [`0.1.0-SNAPSHOT`](https://github.com/Pr0fiNoob/GamblingPlugin/releases/tag/v0.1.0-SNAPSHOT)  
+*(This is an early preview and may be unstable.)*
+
+---
+
+## 🧭 Roadmap
+This project is under active development. Planned versions and features:
+
+### **0.2.0**
+- Add general game infrastructure
+- First gambling game (likely coinflip)
+
+### **0.3.0**
+- Add slot machine game
+
+### **0.4.0**
+- Implement roulette (color/number betting)
+
+### **0.5.0**
+- Add GUI selector for `/gamble`
+
+### **0.6.0**
+- Improve config system
+- Add automatic money-saving
+
+### **0.7.0+**
+- More games
+- Optimization and overall stability improvements
+
+---
+
+
 ## 🛠️ Installation
 
 1. Download the latest plugin release.
@@ -42,13 +79,13 @@ Spend your earned money to try your luck:
 3. Restart the server.
 4. Configure in the generated config file.
 
-## 📜 Commands (Planned)
+## 📜 Commands
 
 * `/exchange` – Convert resources to money.
-* `/balance` – Check your gambling balance.
+* `/balance <player (optional)>` – Check your own or other player's balance.
 * `/gamble` – Open the main gambling menu. (In development)
 
-## ⚙️ Permissions (Planned)
+## ⚙️ Permissions
 
 * `gambling.exchange` – Allows users to convert resources to money.
 * `gambling.balance` – Allows users to check their own or other player's balance
