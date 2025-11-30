@@ -51,7 +51,6 @@ Include in your PR:
 * Use standard Java formatting.
 * Avoid unnecessary complexity.
 * Keep spacing clean and consistent.
-* Avoid hard-coded values; use configuration where possible.
 
 ---
 
