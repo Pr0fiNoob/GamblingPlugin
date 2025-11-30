@@ -6,7 +6,7 @@ A lightweight and modular **Minecraft gambling plugin** that introduces a full i
 
 ### 💰 Resource-to-Money System
 
-Turn vanilla resources into virtual money via commands or GUIs:
+Turn vanilla resources (or just any item) into virtual money via commands:
 
 * Coal
 * Iron
