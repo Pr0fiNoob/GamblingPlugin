@@ -1,5 +1,5 @@
 name: GamblingPlugin
-version: '1.0-SNAPSHOT'
+version: ${project.version}
 main: net.profinoob.gamblingPlugin.GamblingPlugin
 api-version: '1.20'
 authors: [ Pr0fiNoob ]
