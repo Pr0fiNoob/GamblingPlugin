@@ -12,11 +12,17 @@ Create a personal fork of the project to work on.
 
 ### 2. Create a New Branch
 
+Use this format for branch names:
+```
+dev/<version>
+dev/<version>/<feature>
+```
+
 Use a descriptive name, for example:
 
 ```
-feature/roulette-ui-update
-fix/resource-exchange-bug
+dev/0.6.0
+dev/0.6.0/auto-save
 ```
 
 ### 3. Write Clean, Documented Code
@@ -26,16 +32,7 @@ fix/resource-exchange-bug
 * Keep classes focused and maintainable.
 * Follow Java conventions (camelCase, PascalCase, etc.).
 
-### 4. Test Your Changes
-
-Before opening a pull request, test:
-
-* Basic plugin loading
-* Commands affected by your changes
-* Event listeners
-* Any new GUIs or features
-
-### 5. Open a Pull Request (PR)
+### 4. Open a Pull Request (PR)
 
 Include in your PR:
 
@@ -65,6 +62,78 @@ Please include:
 * Logs or error messages if available
 
 ---
+
+## Branching Model
+
+This project uses a simple and clear branching strategy to keep development organized.
+
+### `main` branch
+- Contains only versions that **run** (with or without minor bugs).
+- No unfinished features.
+- All official releases (stable or pre-release) are created from `main`.
+- Hotfixes and small patches are applied directly to `main`.
+
+### `dev/<version>` branches
+- Used for developing the next milestone version.
+- May contain unfinished, experimental, or unstable features.
+- Merged into `main` only when all planned features for that version are complete and the plugin runs without crashing.
+
+### Workflow
+1. Create a new branch: `dev/<version>`
+2. Implement features for that version
+3. Ensure the plugin loads and runs
+4. Merge `dev/<version>` → `main`
+5. Delete the dev branch after merging
+
+---
+
+## Versioning Policy
+
+This project follows semantic versioning-style principles, adapted for plugin development.
+
+### Version Structure: `MAJOR.MINOR.PATCH`
+
+- **MAJOR**: Big feature expansions or breaking changes.  
+  Example: v2.0.0 (Stock/Crypto System)
+
+- **MINOR**: New features or major gameplay additions.  
+  Example: v0.5.0 (GUI selector)
+
+- **PATCH**: Bug fixes and small improvements.  
+  Example: v0.2.3 (Fixes coinflip payout bug)
+
+---
+
+## Release Strategy
+
+Releases are created exclusively from the `main` branch.
+
+### Pre-Releases
+Used for:
+- Early testing
+- Milestone previews
+- Unstable or experimental features
+
+Marked as:
+- SNAPSHOT (very early previews, features may be incomplete)
+- alpha (features are complete but not tested yet)
+- beta (second round of testing)
+
+### Stable Releases
+Created only when:
+- Features for the version are complete
+- Plugin runs without errors
+- Breaking bugs are resolved
+
+### Release Workflow
+1. Merge `dev/<version>` → `main` (if not already done)
+2. Create a GitHub Release
+3. Create a new tag for the release (e.g., `v0.6.0`)
+4. Upload the compiled .jar
+5. Write clear release notes
+6. Mark as pre-release if necessary
+7. Publish the release
+
 
 ## ⚖️ Licensing
 

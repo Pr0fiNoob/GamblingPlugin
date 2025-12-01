@@ -28,7 +28,7 @@ public class BalanceCommand implements CommandExecutor {
         switch (args.length) {
 
             case 0:
-                player.sendMessage(ChatColor.BLUE + "Your balance is: " + GamblingPlugin.getPlugin().getMoneyManager().getBalance(player));
+                player.sendMessage(ChatColor.BLUE + "Your balance is: " + GamblingPlugin.getPlugin().getMoneyManager().getBalance(player) + " coins");
                 break;
 
             case 1:
@@ -38,7 +38,7 @@ public class BalanceCommand implements CommandExecutor {
                     break;
                 }
 
-                player.sendMessage(ChatColor.BLUE + target.getName() + "'s balance is: " + GamblingPlugin.getPlugin().getMoneyManager().getBalance(target));
+                player.sendMessage(ChatColor.BLUE + target.getName() + "'s balance is: " + GamblingPlugin.getPlugin().getMoneyManager().getBalance(target) + " coins");
                 break;
 
             default:
