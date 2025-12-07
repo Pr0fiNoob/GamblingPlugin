@@ -9,7 +9,6 @@ public abstract class Game {
     // Variables
     private String name;
     private String displayName;
-    private ConfigurationSection config;
     private int minBet;
     private int maxBet;
     private int argumentCount;
@@ -21,7 +20,7 @@ public abstract class Game {
         this.name = name;
         this.argumentCount = argumentCount; // Number of required arguments
         this.usage = usage;
-        this.config = GamblingPlugin.getPlugin().getConfig().getConfigurationSection("games." + name);
+        ConfigurationSection config = GamblingPlugin.getPlugin().getConfig().getConfigurationSection("games." + name);
 
         // Check if Config Exists
         if (config == null || config.getKeys(false).isEmpty()) {
@@ -29,15 +28,15 @@ public abstract class Game {
             throw new IllegalArgumentException("No correct config found for game: " + name + "!");
         }
 
-        // Check if min-bet and max-bet are valid
-        if (!(minBet >= 1 || minBet <= maxBet)) {
-            GamblingPlugin.getPlugin().getComponentLogger().error("Invalid min-bet or max-bet for game: {}! It will not work!", name);
-            throw new IllegalArgumentException("Invalid min-bet or max-bet for game: " + name + "!");
-        }
-
         this.displayName = config.getString("display-name");
         this.minBet = config.getInt("min-bet");
         this.maxBet = config.getInt("max-bet");
+
+        // Check if min-bet and max-bet are valid
+        if (minBet < 1 || maxBet < minBet) {
+            GamblingPlugin.getPlugin().getComponentLogger().error("Invalid min-bet or max-bet for game: {}! It will not work!", name);
+            throw new IllegalArgumentException("Invalid min-bet or max-bet for game: " + name + "!");
+        }
     }
 
     // Methods

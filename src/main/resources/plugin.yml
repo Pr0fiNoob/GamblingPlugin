@@ -16,7 +16,7 @@ commands:
 
   gamble:
     description: gamble with your coins
-    usage: /gamble <game> <amount> <any additional arguments if required by the game>
+    usage: /gamble <game> <bet> <additional arguments if required by the game>
 
   # Moderator Commands
   modbalance:

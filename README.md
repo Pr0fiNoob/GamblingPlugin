@@ -24,7 +24,7 @@ Spend your earned money to try your luck:
 * **Roulette** – Bet on colors or numbers. (In development)
 * **Ride the Bus** – High-risk, high-reward mini‑game. (In development)
 * **Slot Machines** – Spin for randomized payouts. (In development)
-* **Coin Flip** – Flip a coin to win or lose money. (In development)
+* **Coin Flip** – Flip a coin to win or lose money.
 * More games are planned!
 
 (All games will remain command-only (this doesn't include the game selection menu) until v1.0.0 is released)
@@ -83,14 +83,21 @@ This project is under active development. Planned versions and features:
 
 * `/exchange` – Convert resources to money.
 * `/balance <player (optional)>` – Check your own or other player's balance.
-* `/gamble` – Open the main gambling menu. (In development)
+* `/gamble <game/help> <bet> <game-specific arguments if required>` – Starts specified game or displays help menu.
 
 ## ⚙️ Permissions
 
-* `gambling.exchange` – Allows users to convert resources to money.
-* `gambling.balance` – Allows users to check their own or other player's balance
-* `gambling.play` – Parent Permission for all gambling games. (In development)
-* `gambling.play.<game>` – Is used to revoke access to a specific game. (In development)
+* ### General Permissions
+  * `gambling.exchange` – Allows users to convert resources to money.
+  * `gambling.balance` – Allows users to check their own or other player's balance
+
+* ### Game Permissions
+  * `gambling.play` – Parent Permission for all gambling games.
+  * `gambling.play.<game>` – Is used to revoke access to a specific game. (In development)
+
+* ### Moderator Permissions
+  * `gambling.mod` – Parent Permission for all moderator commands.
+  * `gambling.mod.balance` – Allows the moderator to add to, remove from, or set a player's balance.
 
 
 ## 🧩 Configuration
@@ -98,7 +105,8 @@ This project is under active development. Planned versions and features:
 A full YAML config allows changing:
 
 * Resource exchange values
-* Minimum and maximum bets (in development)
+* Minimum and maximum bets
+* Display-Names for games
 * More Config coming soon!
 
 ## 💡 Goals

@@ -2,8 +2,6 @@ package net.profinoob.gamblingPlugin.commands;
 
 import net.profinoob.gamblingPlugin.GamblingPlugin;
 import net.profinoob.gamblingPlugin.games.Game;
-import net.profinoob.gamblingPlugin.games.GameManager;
-import net.profinoob.gamblingPlugin.games.implementations.Coinflip;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
