@@ -2,6 +2,10 @@ package net.profinoob.gamblingPlugin;
 
 import net.profinoob.gamblingPlugin.commands.BalanceCommand;
 import net.profinoob.gamblingPlugin.commands.ExchangeCommand;
+import net.profinoob.gamblingPlugin.commands.GamblingCommand;
+import net.profinoob.gamblingPlugin.commands.operatorOnly.ModBalanceCommand;
+import net.profinoob.gamblingPlugin.games.GameManager;
+import net.profinoob.gamblingPlugin.games.implementations.Coinflip;
 import net.profinoob.gamblingPlugin.utils.MoneyManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -9,6 +13,7 @@ public final class GamblingPlugin extends JavaPlugin {
 
     private static GamblingPlugin plugin;
     private MoneyManager moneyManager;
+    private GameManager gameManager;
 
     @Override
     public void onEnable() {
@@ -20,12 +25,31 @@ public final class GamblingPlugin extends JavaPlugin {
         // Save default config if it doesn't exist
         saveDefaultConfig();
 
-        // Initialize MoneyManager
+        // Initialize Manager classes
         moneyManager = new MoneyManager();
+        gameManager = new GameManager();
 
         // Register commands
         getCommand("exchange").setExecutor(new ExchangeCommand());
         getCommand("balance").setExecutor(new BalanceCommand());
+        getCommand("gamble").setExecutor(new GamblingCommand());
+        getCommand("modbalance").setExecutor(new ModBalanceCommand());
+
+        // Register TabCompleters
+        // Yeah, I'm lazy so for now there will be no tab completion (unless someone finds this repo and adds it before me... pretty please?)
+
+        // Register EventListeners
+
+
+
+        // Register Games
+
+        // Coinflip
+        try {
+            gameManager.register(new Coinflip());
+        } catch (Exception e) {
+            getLogger().severe("Failed to register Coinflip game!");
+        }
     }
 
     @Override
@@ -46,5 +70,7 @@ public final class GamblingPlugin extends JavaPlugin {
         return moneyManager;
     }
 
-
+    public GameManager getGameManager() {
+        return gameManager;
+    }
 }

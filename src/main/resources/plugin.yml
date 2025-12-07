@@ -6,17 +6,34 @@ authors: [ Pr0fiNoob ]
 description: A Plugin that adds gambling to Minecraft
 
 commands:
+  # Normal Commands
   exchange:
     description: exchange the item in your hand for money
 
   balance:
     description: check your own or other player's balance
 
+  gamble:
+    description: gamble with your coins
+    usage: /gamble <game> <amount> <any additional arguments if required by the game>
+
 permissions:
+  # General Permissions
   gambling.exchange:
     description: Allows the player to use the exchange command
     default: true
 
   gambling.balance:
     description: Allows the player to check their own and other player's balance
+    default: true
+
+# Game Permissions
+  gambling.play:
+    description: Parent permission for all games
+    default: true
+    children:
+      gambling.play.coinflip: true
+
+  gambling.play.coinflip:
+    description: Allows the player to play coinflip
     default: true
