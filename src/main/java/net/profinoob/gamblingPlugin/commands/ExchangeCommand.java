@@ -58,18 +58,18 @@ public class ExchangeCommand implements CommandExecutor {
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String s, @NotNull String[] args) {
 
-        // Check if Command is executed properly
+        // Check if Command is run by a player which has permission
         if (!(sender instanceof Player player)) {
             sender.sendMessage(ChatColor.RED + "Only players can execute this command!");
             return true;
         }
 
-        // Check if Player has permission to execute command
         if (!player.hasPermission("gambling.exchange")) {
             player.sendMessage(ChatColor.RED + "You don't have permission to use this!");
             return true;
         }
 
+        // Check if Command has any arguments
         if (args.length != 0) {
             sender.sendMessage(ChatColor.RED + "This command doesn't require arguments!");
             return true;

@@ -1,6 +1,13 @@
 exchanges: # You can specify exchange values here like this: Bukkit Material Enum: value (int, greater or equal to 0, negative values or values with decimals are not allowed and will cause an error)
-  # COAL: 1  This is an example.
-  # IRON_INGOT: 5  This is an example.
-  # GOLD_INGOT: 15  This is an example.
-  # EMERALD: 30  This is an example.
-  # DIAMOND: 50  This is an example.
+  COAL: 1 # This is an example.
+  IRON_INGOT: 5 # This is an example.
+  GOLD_INGOT: 15 # This is an example.
+  EMERALD: 30 # This is an example.
+  DIAMOND: 50 # This is an example.
+
+games:
+  coinflip:
+    display-name: "Coin Flip" # What the game will be displayed as in the /gambling menu
+    min-bet: 1 # Has to be greater or equal to 1
+    max-bet: 1000 # Has to be greater or equal to min-bet
+
