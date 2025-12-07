@@ -40,8 +40,8 @@ Spend your earned money to try your luck:
 ---
 
 ## 🚀 Current Release
-**Latest version:** [`0.1.1-SNAPSHOT`](https://github.com/Pr0fiNoob/GamblingPlugin/releases/tag/v0.1.1-SNAPSHOT)  
-*(This is an early preview and may be unstable.)*
+**Latest version:** [`0.2.0-beta`](https://github.com/Pr0fiNoob/GamblingPlugin/releases/tag/v0.2.0-beta)  
+*(May be unstable, depending on the version)*
 
 ---
 
