@@ -20,7 +20,7 @@ public class GamblingCommand implements CommandExecutor {
             return true;
         }
 
-        if (!(player.hasPermission("gambling.play") || player.hasPermission("gambling.play.coinflip"))) {
+        if (!(player.hasPermission("gambling.play") && player.hasPermission("gambling.play.coinflip"))) {
             player.sendMessage(ChatColor.RED + "You don't have permission to use this command!");
             return true;
         }
