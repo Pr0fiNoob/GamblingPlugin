@@ -26,16 +26,16 @@ public class Coinflip extends Game {
             return;
         }
 
+        // Game logic
         boolean win = Math.random() < 0.5;
-
         player.sendMessage(ChatColor.BLUE + "You flipped a coin and it landed on " + (win ? "heads" : "tails") + "!");
+        GamblingPlugin.getPlugin().getMoneyManager().removeMoney(player, bet);
 
         if (win) {
             GamblingPlugin.getPlugin().getMoneyManager().addMoney(player, (int) Math.round(bet * 1.5));
             Component message = Component.text(ChatColor.GREEN + "You won " + Math.round(bet * 1.5) + " coins!");
             player.sendMessage(message);
         } else {
-            GamblingPlugin.getPlugin().getMoneyManager().removeMoney(player, bet);
             Component message = Component.text(ChatColor.RED + "You lost " + bet + " coins!");
             player.sendMessage(message);
         }
