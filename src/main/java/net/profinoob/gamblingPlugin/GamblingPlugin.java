@@ -7,7 +7,13 @@ import net.profinoob.gamblingPlugin.commands.operatorOnly.ModBalanceCommand;
 import net.profinoob.gamblingPlugin.games.GameManager;
 import net.profinoob.gamblingPlugin.games.implementations.Coinflip;
 import net.profinoob.gamblingPlugin.utils.MoneyManager;
+import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
+
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
 
 public final class GamblingPlugin extends JavaPlugin {
 
@@ -24,6 +30,10 @@ public final class GamblingPlugin extends JavaPlugin {
 
         // Save default config if it doesn't exist
         saveDefaultConfig();
+        // Copy any new defaults into existing configs (e.g. for newly added games)
+        if (mergeMissingDefaults(getConfig())) {
+            saveConfig();
+        }
 
         // Initialize Manager classes
         moneyManager = new MoneyManager();
@@ -72,5 +82,27 @@ public final class GamblingPlugin extends JavaPlugin {
 
     public GameManager getGameManager() {
         return gameManager;
+    }
+
+    private boolean mergeMissingDefaults(FileConfiguration config) {
+        InputStream resourceStream = getResource("config.yml");
+        if (resourceStream == null) {
+            return false;
+        }
+
+        boolean updated = false;
+        try (InputStreamReader reader = new InputStreamReader(resourceStream, StandardCharsets.UTF_8)) {
+            YamlConfiguration defaults = YamlConfiguration.loadConfiguration(reader);
+            for (String key : defaults.getKeys(true)) {
+                if (!config.isSet(key)) {
+                    config.set(key, defaults.get(key));
+                    updated = true;
+                }
+            }
+        } catch (Exception e) {
+            getLogger().warning("Unable to merge default config values: " + e.getMessage());
+        }
+
+        return updated;
     }
 }
