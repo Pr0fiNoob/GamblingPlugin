@@ -3,6 +3,7 @@ version: ${project.version}
 main: net.profinoob.gamblingPlugin.GamblingPlugin
 api-version: '1.20'
 authors: [ Pr0fiNoob ]
+contributors: [] #feel free to add yourself if you contributed to the project
 description: A Plugin that adds gambling to Minecraft
 
 commands:
@@ -16,6 +17,11 @@ commands:
   gamble:
     description: gamble with your coins
     usage: /gamble <game> <amount> <any additional arguments if required by the game>
+
+  # Moderator Commands
+  modbalance:
+    description: add to, remove from or set a player's balance
+    usage: /modbalance <player> <add/remove/set> <amount>
 
 permissions:
   # General Permissions
@@ -37,3 +43,14 @@ permissions:
   gambling.play.coinflip:
     description: Allows the player to play coinflip
     default: true
+
+# Moderator Permissions
+  gambling.mod:
+    description: Parent permission for all moderator commands
+    default: op
+    children:
+      gambling.mod.balance: true
+
+  gambling.mod.balance:
+    description: Allows the moderator to add to, remove from or set a player's balance
+    default: op
